@@ -1,0 +1,42 @@
+{% extends 'bootstrap/base.html' %}
+<!-- add import for bootstrap wtf quickform support-->
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/edit-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    {% if is_edit %}
+                    <h1>Edit Post</h1>
+                    {% else: %}
+                    <h1>New Post</h1>
+                    {% endif %}
+                    <span class="subheading">You're going to make a great blog post!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <!-- load ckeditor
+            {{ ckeditor.load() }}
+             configure the ckeditor to tell which field in WTForm will need to be CKEditor
+            {{ ckeditor.config(name="body") }}
+            add WTF quickform -->
+            {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+{% include "footer.html" %}
+{% endblock %}
