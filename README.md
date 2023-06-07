@@ -1,73 +1,87 @@
-# Blog Application Upgraded
+# Blogging Web Application
 
-This is a simple Flask application that serves as a blog. It allows users to view blog posts, read individual posts, and contact the author through a contact form.
+This is a blogging web application developed using Flask, a Python web framework. It showcases various skills and technologies, including:
 
-## Prerequisites
+- Flask framework for building web applications.
+- Flask-Bootstrap for responsive and user-friendly frontend design.
+- Flask-WTF for handling forms and form validation.
+- Flask-CKEditor for integrating a rich text editor in the application.
+- Flask-SQLAlchemy for working with the SQLite database.
+- Flask-Login for user authentication and session management.
+- Flask-Gravatar for displaying user avatars based on email addresses.
+- Python's Werkzeug library for password hashing and verification.
+- SQLite database for data storage and retrieval.
+- HTML templates for rendering dynamic web pages.
+- CSS for styling and layout.
+- JavaScript for client-side interactions.
 
-Make sure you have the following dependencies installed:
+## Features
 
-- Python 3
-- Flask
-- requests
-- dotenv
+- User registration and authentication system.
+- User-friendly forms for creating and editing blog posts.
+- Rich text editor for writing blog content using CKEditor.
+- Commenting system for users to engage in discussions.
+- Access control with admin-only features.
+- Responsive design using Bootstrap framework.
 
-## Getting Started
+## Installation
 
-1. Clone the repository or download the code files.
+1. Clone the repository:
 
-2. Install the required dependencies by running the following command:
-
+   ```shell
+   git clone https://github.com/MirelaManta/blog-upgrated.git
+   cd blog-upgrated
    ```
-   pip install -r <dependency>
+
+2. Create a virtual environment (optional but recommended):
+
+   ```shell
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-3. Create a `.env` file in the root directory and set the following environment variables:
+3. Install the dependencies:
 
+   ```shell
+   pip install -r requirements.txt
    ```
-   MY_EMAIL=<your-email>
-   MY_PASSWORD=<your-email-password>
-   ```
 
-   Replace `<your-email>` with your Gmail email address and password. These credentials will be used for sending contact form emails.
+4. Set up environment variables:
 
-4. Run the Flask application by executing the following command:
+   - Create a `.env` file in the project root directory.
+   - Add the following variables to the `.env` file:
+     - `SECRET_KEY`: Secret key for the Flask application.
+     - `MY_EMAIL`: Your email address for email functionality.
+     - `MY_PASSWORD`: Your email account password.
+     - Any other configuration variables required.
 
-   ```
+5. Run the application:
+
+   ```shell
    python main.py
    ```
 
-   The application will start running on `http://localhost:5000`.
+6. Open your web browser and visit `http://localhost:5000` to see the application in action.
 
-5. Open your web browser and navigate to `http://localhost:5000` to view the blog.
+## Usage
+
+- Register a new account or log in with an existing account to start using the application.
+- Only the admin user (user with ID 1) can create new blog posts.
+- Other users can view all existing posts on the homepage.
+- Click on a post to view its full content and comments.
+- Leave comments on posts when logged in.
+- Edit or delete posts (admin-only functionality).
+- Log out when done using the application.
 
 ## File Structure
 
-- `main.py`: This is the main Python script that defines the Flask application and its routes.
+- `main.py`: Main Flask application file containing route definitions, application setup and database models using SQLAlchemy ORM.
+- `forms.py`: Contains FlaskForm classes for various forms used in the application.
+- `templates/`: Directory containing HTML templates for different views.
+- `static/`: Directory containing static assets such as CSS, JavaScript, and images.
+- `blog.db`: SQLite database file (automatically created on first run).
 
-- `templates/`: This directory contains the HTML templates used by the application.
+## Contributing
 
-  - `index.html`: The home page that displays a list of blog posts.
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
 
-  - `about.html`: The about page that provides information about the author.
-
-  - `post.html`: The page that displays a full blog post.
-
-  - `contact.html`: The contact page that allows users to send messages to the author.
-
-- `static/`: This directory contains static files such as CSS stylesheets and images.
-
-  - `assets/`: This directory contains images used in the application.
-
-- `README.md`: This file provides information about the project.
-
-## Skills and Technologies Used
-
-- Flask: Python web framework used for building the application.
-- HTML: Markup language for creating the structure of web pages.
-- CSS: Styling language used to design the appearance of web pages.
-- JavaScript: Programming language used to add interactivity to the application.
-- Python: Programming language used for the backend development.
-- Git: Version control system for tracking changes in the code.
-- GitHub: Web-based platform for hosting and collaborating on Git repositories.
-- SMTP: Protocol used for sending emails through the application.
-- Gmail: Email service provider used for sending contact form emails.
