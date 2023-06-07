@@ -15,8 +15,6 @@ from functools import wraps
 
 load_dotenv()
 
-my_email = os.environ["MY_EMAIL"]
-my_password = os.environ["MY_PASSWORD"]
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
