@@ -51,8 +51,6 @@ This is a blogging web application developed using Flask, a Python web framework
    - Create a `.env` file in the project root directory.
    - Add the following variables to the `.env` file:
      - `SECRET_KEY`: Secret key for the Flask application.
-     - `MY_EMAIL`: Your email address for email functionality.
-     - `MY_PASSWORD`: Your email account password.
      - Any other configuration variables required.
 
 5. Run the application:
@@ -75,11 +73,11 @@ This is a blogging web application developed using Flask, a Python web framework
 
 ## File Structure
 
-- `main.py`: Main Flask application file containing route definitions, application setup and database models using SQLAlchemy ORM.
+- `app.py`: Main Flask application file containing route definitions, application setup and database models using SQLAlchemy ORM.
 - `forms.py`: Contains FlaskForm classes for various forms used in the application.
 - `templates/`: Directory containing HTML templates for different views.
 - `static/`: Directory containing static assets such as CSS, JavaScript, and images.
-- `blog.db`: SQLite database file (automatically created on first run).
+- `instance/blog.db`: SQLite database file (automatically created on first run).
 
 ## Contributing
 
