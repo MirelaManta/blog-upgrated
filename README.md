@@ -58,7 +58,7 @@ This is a blogging web application developed using Flask, a Python web framework
 5. Run the application:
 
    ```shell
-   python main.py
+   python app.py
    ```
 
 6. Open your web browser and visit `http://localhost:5000` to see the application in action.
